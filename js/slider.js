@@ -1,11 +1,11 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { indexOfSlide } from "./modal";
 
+// slider video picture
 const swiper = new Swiper(".video-swiper", {
   navigation: true,
   loop: false,
@@ -20,13 +20,13 @@ const swiper = new Swiper(".video-swiper", {
   },
 });
 
-
-const swiperPopup = new Swiper('.modal', {
+// slider in popup
+const swiperPopup = new Swiper(".modal", {
   modules: [Navigation, Pagination],
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 0,
   pagination: {
@@ -35,9 +35,7 @@ const swiperPopup = new Swiper('.modal', {
   },
 });
 
-swiperPopup.on('slidesUpdated', function () {
+swiperPopup.on("slidesUpdated", function () {
   swiperPopup.activeIndex = indexOfSlide;
   swiper.update();
-  // swiper.pagination.update();
-  // console.log(swiperPopup)
-})
+});
