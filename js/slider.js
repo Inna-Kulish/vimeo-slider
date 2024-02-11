@@ -26,7 +26,6 @@ const swiperPopup = new Swiper(".modal", {
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
-  slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 0,
   pagination: {
@@ -36,6 +35,7 @@ const swiperPopup = new Swiper(".modal", {
 });
 
 swiperPopup.on("slidesUpdated", function () {
+  console.log('tut')
   swiperPopup.activeIndex = indexOfSlide;
   swiper.update();
 });

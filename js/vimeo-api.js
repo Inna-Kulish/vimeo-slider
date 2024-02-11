@@ -1,4 +1,3 @@
-const TOKEN = "953fa4d64cf37d3c6c16bac8553f3d84";
 const BASE_URL = "https://api.vimeo.com/videos";
 const videoId = "824804225";
 
@@ -7,7 +6,7 @@ export const fetchVideo = async () => {
   try {
     const response = await fetch(`${BASE_URL}/${videoId}`, {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
       },
     });
 
